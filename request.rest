@@ -1,0 +1,116 @@
+
+# GetAll pessoas
+GET http://localhost:3000/pessoas
+
+###
+
+
+# Get Pesssoa by Id
+GET http://localhost:3000/pessoas/2
+
+
+###
+# Create pessoa
+POST http://localhost:3000/pessoas
+Content-Type: application/json
+
+    {
+        "nome":"Francieli de Almeida",
+        "endereco":{
+            "rua": "Rua Porto Alegre",
+            "cidade": "Curitiba" 
+        }
+    }
+
+
+
+###
+# Update pessoa
+PUT http://localhost:3000/pessoas/3
+Content-Type: application/json
+
+    {
+        "nome":"Fran de Almeida",
+        "endereco":{
+            "rua": "Rua Curitiba",
+            "cidade": "PoA" 
+        }
+    }
+
+
+###
+# Delete pessoa
+DELETE http://localhost:3000/pessoas/2
+  
+
+###
+# GetAll endereços
+GET http://localhost:3000/enderecos
+
+
+###
+# Get endereço by Id
+GET http://localhost:3000/enderecos/1
+
+
+
+###
+###
+# GetAll produtos
+GET http://localhost:3000/produtos
+
+###
+
+
+# Get Produtos by Id
+GET http://localhost:3000/produtos/5
+
+
+###
+# Create produto
+POST http://localhost:3000/produtos
+Content-Type: application/json
+
+    {
+        "descricao":"Oculos",
+        "preco":100,
+        "coresIds":[2,3]
+    }
+
+
+
+###
+# GetAll pedidos (todos os pedidos da base de dados)
+# Recupera todos os pedidos cadastrados no banco de dados
+GET http://localhost:3000/pedidos
+###
+
+
+###
+# GetAll pedidos (do cliente específico)
+#Recupera todos os pedidos do cliente indicado
+#Sistema está fazendo a busca do cliente e dos pedidos mas não retorna
+# fica 'waiting' 
+GET http://localhost:3000/pedidos/1
+###
+
+
+
+###
+# Get pedido by id (do cliente)
+GET http://localhost:3000/pedidos/3/7
+
+###
+
+
+###
+# Create pedido
+POST http://localhost:3000/pedidos/3
+Content-Type: application/json
+
+    {
+        "valor":0,
+        "produtosIds":[6]
+    }
+
+###
