@@ -85,7 +85,7 @@ controller.create = async (req, res) => {
     const coresBD = await Cor.findAll()
 
     try {
-        const cores = await Cor.findAll({ where: { idCor: coresIds } });
+        const cores = await Cor.findAll({ where: { id: coresIds } });
 
         produto = await Product.create({ descricao, preco })
 
