@@ -6,7 +6,13 @@
     <div class="container">
       <div class="columns">
         <div class="column is-four-fifths">
-          <h1 class="title size-4">Listas de Pessoas</h1>
+          <h1 class="title size-4">Listas de Clientes</h1>
+        </div>
+        <div class="column is-one-fifth">
+          <div class="buttons is-pulled-right">
+            <a href="/pessoas/novo" class="button is-success is-small">Novo cliente</a>
+            <a href="/" class="button is-small">Voltar</a>
+          </div>
         </div>
       </div>
 
@@ -19,9 +25,11 @@
                 Nome <%= pessoa.nome %>
               </p>
               <p class="subtitle is-size-5">
-                Endereço: <%= pessoa.Endereço %>
+                Rua: <%= pessoa.endereco.rua %>
+                Cidade: <%= pessoa.endereco.cidade %>
               </p>
             </div>
+            
           </div>
         </div>
         <% }) %>
