@@ -3,7 +3,16 @@ const Endereco = require("../models/endereco")
 
 const controller = {}
 
-//falta implementar front-end
+
+controller.getRegisterPage = async (req,res) => {
+    try {
+        res.status(200).render("/pessoas/form",{
+    })
+    } catch (error) {
+        res.status(500).render("pages/error",{error: "Erro ao corregar o formulário!"})
+    }
+}
+
 controller.getAll = async (req, res) => {
     try{
         const pessoas = await Pessoa.findAll({
