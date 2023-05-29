@@ -9,7 +9,11 @@ controller.getAll = async (req, res) => {
         const pessoas = await Pessoa.findAll({
             include: Endereco
         })
-        res.status(200).json(pessoas)
+        // res.status(200).json(pessoas)
+        res.status(200).render("pessoas/index", {
+            pessoas: pessoas
+        })
+
     }catch(error){
         res.status(500).json(error)
     }

@@ -1,27 +1,32 @@
-<%- include("../layouts/header", {title: 'Pessoas'}) %>
+<%- include("../layouts/header", {title: 'Lista de Pessoas'}) %>
 
 <%- include("../layouts/menu") %>
 
-<section>
+<section class="section">
     <div class="container">
-        <div class="columns">
-            <div class="column is-four-fifths">
-              <h1 class="title size-4">Listas de Pessoas</h1>
+      <div class="columns">
+        <div class="column is-four-fifths">
+          <h1 class="title size-4">Listas de Pessoas</h1>
+        </div>
+      </div>
+
+      <div class="columns is-multiline">
+        <% pessoas.forEach(pessoa =>{ %>
+        <div class="column is-one-quarter">
+          <div class="card has-background-white-ter">
+            <div class="card-content">
+              <p class="subtitle is-size-5">
+                Nome <%= pessoa.nome %>
+              </p>
+              <p class="subtitle is-size-5">
+                Endereço: <%= pessoa.Endereço %>
+              </p>
             </div>
           </div>
-
-
-
-
-
+        </div>
+        <% }) %>
+      </div>
     </div>
-</section>
+  </section>
 
-
-
-
-
-
-
-
-<%- include("../layouts/footer") %>
+  <%- include("../layouts/footer") %>
