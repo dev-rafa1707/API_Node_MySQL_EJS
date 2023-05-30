@@ -6,7 +6,7 @@ const controller = {}
 
 controller.getRegisterPage = async (req,res) => {
     try {
-        res.status(200).render("/pessoas/form",{
+        res.status(200).render("pessoas/form",{
     })
     } catch (error) {
         res.status(500).render("pages/error",{error: "Erro ao corregar o formulário!"})
@@ -24,7 +24,8 @@ controller.getAll = async (req, res) => {
         })
 
     }catch(error){
-        res.status(500).json(error)
+        // res.status(500).json(error)
+        res.status(500).render("pages/error",{error: "Erro ao corregar o formulário!"})
     }
 }
 
@@ -49,13 +50,12 @@ controller.getById = async (req, res) => {
 
 //falta implementar front-end
 controller.create = async (req, res) => {
-    const {nome} = req.body
-    const {rua,cidade} = req.body.endereco
+    const {nome,rua,cidade} = req.body
 
     try{
         const pessoa = await Pessoa.create({nome})
         await Endereco.create({rua,cidade,pessoaId:pessoa.id})
-        res.status(200).json(pessoa)
+        res.status(200).redirect("/pessoas")
     }catch(error){ 
         res.status(422).send("Ocorreu um erro ao cadastrar a pessoa. " + error)
     }
